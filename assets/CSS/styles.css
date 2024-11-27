@@ -1,0 +1,216 @@
+ /* Estilos globales */
+ body {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+    color: #000000;
+    background: url(https://i.pinimg.com/736x/d2/0b/dd/d20bddadc31f459bd8a9b08f7d4664ad.jpg)
+    no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Encabezado */
+  header {
+    background: #ffffffde;
+    color: rgb(0, 0, 0);
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  
+  nav .btn {
+    margin: 10px;
+    padding: 10px 20px;
+    background: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav .btn:hover {
+    background: #00f7ffde;
+  }
+  
+  /* Secciones */
+  .section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.822);
+    box-shadow: 0 4px 8px rgba(0, 119, 255, 0.527);
+    border-radius: 10px;
+  }
+  
+  .section.hidden {
+    display: none;
+  }
+  
+  .section h2 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  table thead {
+    background: #000000;
+  }
+  
+  form input {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: calc(100% - 20px);
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
+table th, table td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #353535;
+}
+
+table th:nth-child(3), table td:nth-child(3),
+table th:nth-child(4), table td:nth-child(4) {
+  width: 20%; /* Ajustar espacio para duración y frecuencia */
+    text-align: center;
+}
+  
+  table th {
+    background: #000000;
+    color: white;
+  }
+  
+  table tr:hover {
+    background: #ffffffde;
+  }
+  
+  table td button {
+    padding: 5px 10px;
+    background: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  table td button:hover {
+    background: #00f7ffde;
+  }
+  
+  /* Botones principales */
+  .btn {
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #00f7ffde;
+  }
+  
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 520px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+  
+  .modal-content h2 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  
+  .modal-content form {
+    margin-top: 10px;
+  }
+  
+  .modal-content form input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .modal-content .close-btn:hover {
+    color: #000;
+  }
+  
+  /* Formulario de medicamentos */
+  #medicamentos-form button {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .btn-eliminar {
+    background: #ff1900;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-eliminar:hover {
+    background: #ff1900;
+  }

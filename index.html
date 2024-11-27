@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Pacientes</title>
+  <link rel="stylesheet" href="./assets/CSS/styles.css">
+  <script src="./assets/JS/app.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Gestión de Pacientes</h1>
+    <nav>
+      <button id="btn-citas" class="btn">Citas</button>
+      <button id="btn-pacientes" class="btn">Pacientes</button>
+      <button id="btn-calendario" class="btn">Calendario</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección de Citas -->
+    <section id="citas-section" class="section hidden">
+      <h2>Citas Programadas</h2>
+      <button id="btn-agregar-cita" class="btn">Agregar Cita</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Paciente</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Motivo</th> <!-- Nueva columna -->
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="citas-list"></tbody>
+      </table>
+    </section>
+
+    <!-- Sección de Pacientes -->
+    <section id="pacientes-section" class="section">
+      <h2>Pacientes Registrados</h2>
+      <button id="btn-agregar-paciente" class="btn">Agregar Paciente</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Género</th>
+            <th>Identificación</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="pacientes-list"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Modal Medicamentos -->
+  <div id="modal-medicamentos" class="modal hidden">
+    <div class="modal-content">
+      <button id="cerrar-modal" class="close-btn">×</button>
+      <h2>Medicamentos para el paciente</h2>
+      <form id="medicamentos-form">
+        <input type="text" id="medicamento-nombre" placeholder="Nombre del medicamento" required>
+        <input type="text" id="medicamento-dosis" placeholder="Dosis" required>
+        <input type="time" id="medicamento-hora" placeholder="Hora Inicio" required>
+        <input type="text" id="medicamento-duracion" placeholder="Duración (en días)" required>
+        <input type="text" id="medicamento-frecuencia" placeholder="Frecuencia (e.g., cada 8 horas)" required>
+        <button type="submit" class="btn">Agregar Medicamento</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Dosis</th>
+            <th>Hora</th>
+            <th>Duración</th>
+            <th>Frecuencia</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="medicamentos-list"></tbody>
+      </table>
+      
+    </div>
+  </div>
+
+  <!-- Modal Historia Clínica -->
+  <div id="modal-historia-clinica" class="modal hidden">
+    <div class="modal-content">
+      <button id="cerrar-historia-modal" class="close-btn">×</button>
+      <h2>Historia Clínica</h2>
+      <textarea id="historia-clinica-texto" rows="15" placeholder="Escribe aquí la historia clínica..."></textarea>
+      <button id="guardar-historia" class="btn">Guardar Historia</button>
+    </div>
+  </div>
+</body>
+</html>
+

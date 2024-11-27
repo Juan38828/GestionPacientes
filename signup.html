@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Exchange</title>
+    <link rel="stylesheet" href="./assets/CSS/index.css" />
+  </head>
+  <body>
+    <section>
+      <!-- Contenedor principal de los formularios -->
+      <div class="form-container">
+        <!-- Contenido del formulario de Register -->
+        <div id="Register">
+          <div class="login-box">
+            <div>
+              <h2>Sign Up</h2>
+              <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="email" required id="email" />
+                <label>Email</label>
+              </div>
+              <div class="input-box">
+                <span class="icon"
+                  ><ion-icon name="lock-closed"></ion-icon
+                ></span>
+                <input type="password" required id="password" />
+                <label>Password</label>
+              </div>
+              <div class="input-box">
+                <select id="role">
+                  <option value="Doctor">Doctor</option>
+                  <option value="Nurse">Enfermero</option>
+                  <option value="Assistant">Auxiliar</option>
+                </select>
+              </div>
+              <button type="submit" id="signUpBtn">Sign Up</button>
+              <div class="register-link">
+                <p>Already have an account?<a href="/login.html"> Login</a></p>
+              </div>
+            </div>
+            <!-- Botón para cerrar el formulario de Register -->
+            <a class="close-btn" href="./index1.html">Close</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Scripts de ionicons para los íconos -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <!-- Script principal -->
+    <script src="./assets/JS/script.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDfS9XG73ffVJM5pcN_GNURkZCfqlzs6Jo",
+        authDomain: "currency-exchange-ulibre.firebaseapp.com",
+        projectId: "currency-exchange-ulibre",
+        storageBucket: "currency-exchange-ulibre.appspot.com",
+        messagingSenderId: "745964915638",
+        appId: "1:745964915638:web:e506d52c0dccff373a0f17",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const signUpBtn = document.getElementById("signUpBtn");
+
+      //signup
+      const signUp = async () => {
+        const signUpEmail = email.value;
+        const signUpPassword = password.value;
+        createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+          .then((userCreditional) => {
+            // Signed in
+            alert("user created successfully");
+            window.location.href = "/index.html";
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+            alert(errorMessage);
+          });
+      };
+      signUpBtn.addEventListener("click", signUp);
+    </script>
+  </body>
+</html>
